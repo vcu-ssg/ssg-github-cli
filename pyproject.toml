@@ -1,0 +1,23 @@
+[project]
+name = "ssg-github-cli"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "John Leonard", email = "john@lowkeylabs.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "click (>=8.1.8,<9.0.0)",
+    "pygithub (>=2.6.0,<3.0.0)"
+]
+
+[project.scripts]
+mygh = "mygh.mygh:cli"  # This tells Poetry to find cli() in mygh/cli.py
+
+[tool.poetry]
+packages = [{ include = "mygh" }]  # ✅ Explicitly include the mygh package
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
